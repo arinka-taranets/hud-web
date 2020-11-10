@@ -1,0 +1,99 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    .row-column {
+        width: 50%;
+        flex-direction: column;
+        @include mq("tablet-small") {
+            width: 100%;
+        }
+    }
+    p + .bg-grey {
+        margin-top: 60px;
+        padding-bottom: 10px !important;
+        @include mq("tablet") {
+            margin-top: 50px;
+        }
+        @include mq("tablet-small") {
+            margin-top: 30px;
+        }
+    }
+    .catalog {
+        .image-hold {
+            position: relative;
+            .data {
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                font-size: 22px;
+                line-height: 26px;
+                color: #fff;
+                background-color: #323031;
+                padding: 25px 30px 24px 30px;
+                font-family: $SFProDisplay-Semibold;
+                @include mq("tablet") {
+                    padding: 15px 20px 14px 20px;
+                    font-size: 18px;
+                    line-height: 26px;
+                }
+                @include mq("tablet-small") {
+                    padding: 5px 10px;
+                    font-size: 12px;
+                    line-height: 16px;
+                }
+            }
+        }
+    }
+    .bg-grey + .teacher-holder {
+        margin-top: 98px !important;
+        margin-bottom: 50px !important;
+        @include mq("tablet") {
+            margin-top: 78px !important;
+        }
+        @include mq("tablet-small") {
+            margin-top: 58px !important;
+        }
+    }
+
+    p + .large {
+        padding-top: 27px;
+        @include mq("tablet-small") {
+            padding-top: 7px;
+        }
+    }
+    .contest-holder {
+        .large {
+            padding-bottom: 4px;
+            margin-bottom: 36px;
+        }
+        .prizes-holder {
+            background-color: #984A8A;
+            padding: 24px 26px 17px;
+            color: #fff;
+            hr {
+                background-color: #D885C9;
+            }
+            .h3 {
+                display: block;
+                font-size: 24px;
+                line-height: 32px;
+                font-family: $CloserText-Medium;
+                margin-bottom: 35px;
+            }
+            p {
+                padding-right: 150px;
+                margin-bottom: 10px;
+                @include mq("tablet") {
+                    padding-right: 0;
+                }
+            }
+        }
+    }
+}
+.contest-holder + .materials-holder {
+    margin-top: -20px !important;
+    @include mq("tablet-small") {
+        margin-top: 0 !important;
+    }
+}

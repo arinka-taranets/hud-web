@@ -1,0 +1,8 @@
+
+.icon-star-empty:before { content: '\e800'; } /* '' */
+.icon-right-open:before { content: '\e801'; } /* '' */
+.icon-left-open:before { content: '\e802'; } /* '' */
+.icon-facebook:before { content: '\f09a'; } /* '' */
+.icon-youtube-play:before { content: '\f16a'; } /* '' */
+.icon-vkontakte:before { content: '\f189'; } /* '' */
+.icon-instagram-1:before { content: '\f32d'; } /* '' */

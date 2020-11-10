@@ -1,0 +1,9 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+main .section-title-not-border {
+    border-top: none;
+    padding-top: 0px;
+    margin-bottom: 50px !important;
+    margin-top: 0 !important;
+}

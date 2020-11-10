@@ -1,0 +1,114 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section-promo + .section-title {
+    margin-top: -35px;
+    margin-bottom: 37px;
+    @include mq("tablet-wide") {
+        margin-top: -5px;
+    }
+}
+.section-title + .section-about {
+    margin-bottom: 52px;
+    @include mq("tablet-wide") {
+        margin-bottom: 22px;
+    }
+    @include mq("tablet") {
+        margin-bottom: 12px;
+    }
+    .container {
+        @include mq("tablet-small") {
+            display: block;
+        }
+    
+    }
+    .text {
+        width: 41%;
+        margin-right: 30px;
+        @include mq("tablet-small") {
+            width: 100%;
+        }
+    }
+    .large {
+        width: 59%;
+        margin-top: 12px;
+        padding-top: 16px;
+        @include mq("tablet-small") {
+            width: 100%;
+            &:after {
+                background: none;
+            }
+           
+        }
+        p {
+            font-size: 16px;
+            line-height: 26px;
+            margin: 0 0 26px;
+        }
+    }
+}
+.section-about + .section.bg-grey-light {
+    padding-top: 60px;
+    padding-bottom: 50px;
+    @include mq("tablet-wide") {
+        padding-top: 50px;
+        padding-bottom: 10px;
+    }
+    @include mq("tablet") {
+        padding-top: 40px;
+        padding-bottom: 10px;
+    }
+    .btn-large {
+        width: 100%;
+        height: 244px;
+        align-items: flex-end;
+        display: flex;
+        margin: 0;
+        padding:0 31px 25px;
+        font-size: 18px;
+        line-height: 26px;
+        @include mq("tablet-wide") {
+            height: 207px;
+        }
+        @include mq("tablet") {
+            height: 152px;
+        }
+        @media only screen and (max-width: 767px) {
+            height: 130px;
+            padding: 0 20px 15px;
+        }
+        @include mq("tablet-small") {
+            height: 124px;
+            padding: 0 20px 15px;
+        }
+        &:after {
+            top: auto;
+            right: 30px;
+            bottom: 25px;
+            width: 64px;
+            height: 16px;
+            background-size: cover;
+            @media only screen and (max-width: 767px) {
+                right: 20px;
+                bottom: 18px;
+            }
+            @include mq("tablet-small") {
+                right: 20px;
+                bottom: 18px;
+            }
+        }            
+    }
+}
+.section.bg-grey-light + .section.bg-grey {
+    padding-top: 60px !important;
+    padding-bottom: 40px !important;
+    margin-bottom: 70px;
+    @include mq("tablet-wide") {
+        padding-bottom: 10px !important;
+        margin-bottom: 50px;
+    }
+    @include mq("tablet") {
+        padding-bottom: 0px !important;
+        margin-bottom: 40px;
+    }
+}

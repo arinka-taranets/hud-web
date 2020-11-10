@@ -1,0 +1,101 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    &-contacts {
+        padding-top: 10px;
+        margin-bottom: 80px;
+        @include mq("tablet-wide") {
+            margin-bottom: 60px;
+        }
+        @include mq("tablet") {
+            margin-bottom: 50px;
+        }
+        @include mq("tablet-small") {
+            margin-bottom: 30px;
+        }
+        .contacts {
+            justify-content: space-between;
+        }
+        .address {
+            width: 42%;
+            @include mq("tablet-small") {
+                margin-bottom: 30px;
+            }
+            dl {
+                margin-bottom: 20px;
+                font: 16px/26px $SFProDisplay-Regular;
+                color: #323031;
+                dt {
+                    display: block;
+                    strong {
+                        display: block;
+                        font-size: 24px;
+                        line-height: 32px;
+                        font-weight: normal;
+                        margin-bottom: 5px;
+                        font-family: $CloserText-Medium;
+                        color: #000;
+                    }
+                }
+                & + .soc-icon {
+                    padding-top: 33px;
+                    margin-left: -7px ;
+                    margin-bottom: 20px;
+                }
+            }
+        }
+        .forma-contacts {
+            width: 58%;
+            padding-top: 10px;
+            margin-top: -18px;
+            @include mq("tablet") {
+                margin-top: 12px;
+            }
+            .input-box {
+                width: 100%;
+                margin-bottom: 32px;
+                input {
+                    padding-bottom: 7px;
+                    height: 30px;
+                    width: 100%;
+                    font-size: 16px;
+                    line-height: 26px;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid #989697;
+                    color: #323031;
+                    font-family: $SFProDisplay-Regular;
+                    &::placeholder {
+                        font-size: 16px;
+                        line-height: 26px; 
+                        color: #323031;
+                        font-family: $SFProDisplay-Regular; 
+                    }
+                }
+            }
+            .textarea-box {
+                margin-bottom: 40px;
+                textarea {
+                    padding-top: 4px;
+                    padding-bottom: 5px;
+                    width: 100% !important;
+                    height: 126px;
+                    font-size: 16px;
+                    line-height: 26px;
+                    background: none;
+                    border: none;
+                    border-bottom: 1px solid #989697;
+                    color: #323031;
+                    font-family: $SFProDisplay-Regular;
+                    &::placeholder {
+                        font-size: 16px;
+                        line-height: 26px; 
+                        color: #323031;
+                        font-family: $SFProDisplay-Regular; 
+                    }
+                }
+            }
+        }
+    }
+}

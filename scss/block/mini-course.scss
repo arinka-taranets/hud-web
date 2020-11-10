@@ -1,0 +1,25 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    
+    .video-box + .bg-grey {
+        margin-top: 70px !important;
+        padding-bottom: 25px !important;
+        margin-bottom: 60px !important;
+        @include mq("tablet") {
+            padding-bottom: 0 !important;
+            margin-bottom: 50px !important;
+            margin-top: 50px !important;
+        }
+        @include mq("tablet-small") {
+            margin-bottom: 30px !important;
+            margin-top: 40px !important;
+        }
+    }
+    .online-course-holder {
+        .h3 + .price-holder {
+            padding-top: 16px;
+        }
+    }
+}

@@ -1,0 +1,197 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+   
+    &-wrapper {
+        &-narrow {
+            .content {
+                width: calc(100% - 200px);
+                padding-top: 28px;
+                @include mq("tablet") {
+                    width: 100%;
+                    padding-top: 80px;
+                }
+                .catalog {
+                    .btn {
+                        margin-bottom: 20px;
+                    }
+                }
+            }
+            .aside {
+                width: 170px;
+                
+            }
+        }
+    }
+    .large.not-border {
+        border-bottom: none;
+        margin-bottom: 7px;
+    }
+    .catalog {
+        .modul {
+            position: relative;
+            font-size: 18px;
+            line-height: 38px;
+            color: #323031;
+            font-family: $SFProDisplay-Semibold;
+            display: inline-block;
+            padding: 0 10px;
+            margin: 0 0 10px -10px;
+            &:after {
+                content: ' ';
+                position: absolute;
+                width: 100%;
+                height: 14px;
+                bottom: 4px;
+                left: 0;
+                background-color: #EBEBEB;
+                z-index: -1;
+            }
+            & + .h3 {
+                margin: 0 0 -7px;
+                & + .course {
+                    margin: 0 0 64px !important;
+                    }
+            }
+        }
+        .finish {
+            margin: 0 0 10px;
+            font-size: 14px;
+            line-height: 28px;
+            color: #323031;
+            font-family: $SFProDisplay-Semibold;
+            dt {
+                display: inline-block;
+                margin-right: 5px;
+            }
+            dd {
+                display: inline-block;
+                margin: 0;
+            }
+        }
+        .course + .finish {
+            margin: -54px 0 26px;
+            
+        }
+    }
+    /* request */
+    .request {
+        background: #3c2437 url(../image/bg1.png) no-repeat 50% 0;
+        background-size: cover;
+        padding: 54px 70px;
+        color: #fff;
+        margin-bottom: 85px;
+        @include mq("tablet") {
+            margin-bottom: 50px !important;
+            padding: 34px 50px;
+        }
+        @include mq("tablet-small") {
+            margin-bottom: 30px !important;
+            padding: 24px 30px;
+        }
+        .h2 {
+            font-size: 48px;
+            line-height: 63px;
+            color: #fff;
+            margin-bottom: 17px;
+            padding-right: 100px;
+            @include mq("tablet-wide") {
+                font-size: 42px;
+                line-height: 55px;
+                padding: 0;
+            }
+            @include mq("tablet-small") {
+                margin: 0 0 20px;
+                max-width: none;
+                font-size: 30px;
+                line-height: 38px;
+            }
+        }
+        p {
+            font-size: 22px;
+            line-height: 38px;
+            margin-bottom: 50px;
+                @include mq("tablet-small") {
+                    font-size: 20px;
+                    line-height: 30px;
+                }
+            }
+        }
+        .btn {
+            margin: 0 0 20px;
+            &-submit {
+                height: 52px;
+                font-size: 18px;
+                line-height: 26px;
+                font-family: $SFProDisplay-Semibold;
+                padding: 0 137px 0 20px;
+                @include mq("tablet-small") {
+                    width: 100%;
+                    padding: 0 26px 0 20px;
+                }
+                @include mq("phone") {
+                    font-size: 16px;
+                    padding: 0 36px 0 15px;
+                }
+                &:after {
+                    background-size: cover;
+                    width: 64px;
+                    height: 16px;
+                    right: 22px;
+                    @include mq("tablet-small") {
+                        right: 10px;
+                        width: 55px;
+                        height: 13px;
+                        top: 20px;
+                    }
+                }
+            }
+        }
+    }
+    .catalog + .request {
+        margin-top: 10px;
+        margin-bottom: 70px;
+        @include mq("tablet") {
+            margin-bottom: 50px;
+        }
+        @include mq("tablet-small") {
+            margin-bottom: 30px;
+        }
+    }
+    
+    .faq-holder {
+        margin-bottom: 70px;
+        @include mq("tablet") {
+            margin-bottom: 50px !important;
+        }
+        @include mq("tablet-small") {
+            margin-bottom: 30px !important;
+        }
+        .modul {
+            display: block;
+            font-size: 18px;
+            color: #D885C9;
+            line-height: 21px;
+            font-family: $SFProDisplay-Semibold;
+            margin-bottom: 8px;
+            & + h2 {
+                margin-bottom: 20px;
+                & + p {
+                    margin: 0 0 37px;
+                }
+            }
+        }
+    }
+    .content .request + .faq-holder {
+        margin-bottom: 70px !important;
+        @include mq("tablet") {
+            margin-bottom: 50px !important;
+        }
+    }
+    .content .faq-holder + .faq-holder {
+        margin-bottom: 70px !important;
+        @include mq("tablet") {
+            margin-bottom: 50px !important;
+        }
+    }

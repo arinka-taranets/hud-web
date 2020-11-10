@@ -1,0 +1,13 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+
+.section-title + .section-wrapper {
+    margin-top: -5px;
+    .content {
+        padding-top: 26px;
+        @include mq("tablet") {
+            padding-top: 80px;
+        }
+    }
+}

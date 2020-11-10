@@ -1,0 +1,267 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    &-wrapper {
+        .content {
+            /* programm-text */
+            .programm-text {
+                padding: 32px 0 0;
+                img {
+                    float: right;
+                    margin: 5px 0 0 25px;
+                    object-fit: cover;
+                    height: auto;
+                    @include mq("tablet-wide") {
+                        height: 300px;
+                        width: 40%;
+                    }
+                    @include mq("tablet-small") {
+                        float: none;
+                        display: block;
+                        width: 100%;
+                        margin: 0;
+                        margin-bottom: 20px;
+                    }
+                }
+                .text {
+                    overflow: hidden;
+                }
+            }
+            p + .programm-content {
+                margin-top: 53px;
+            }
+            /* result-holder */
+            .result-holder {
+                margin: 67px 0 50px;
+                padding: 54px 70px 76px 70px;
+                @include mq("tablet") {
+                    margin: 37px 0 50px;
+                }
+                @include mq("tablet-small") {
+                    padding: 24px 40px 46px 40px;
+                }
+                @include mq("phone") {
+                    padding: 24px 20px 30px 20px;
+                }
+                .title {
+                    font: 30px/40px $CloserText-Regular;
+                    color: #fff;
+                    display: block;
+                    margin: 0 0 30px;
+                    @include mq("tablet-small") {
+                        font-size: 26px;
+                        line-height: 32px;
+                    }
+                }
+                img {
+                    display: block;
+                    width: 100%;
+                    object-fit: cover;
+                    height: auto;
+                }
+            }
+            /* contest-holder */
+            .contest-holder {
+                margin-bottom: 87px;
+                @include mq("tablet") {
+                    margin-bottom: 57px;
+                }
+                @include mq("tablet-small") {
+                    margin-bottom: 37px;
+                }
+                @include mq("phone") {
+                    padding-top: 30px;
+                }
+                .btn {
+                    @include mq("phone") {
+                        padding: 0 40px 0 10px;
+                        width: 100%;
+                    }
+                    &:after {
+                        @include mq("phone") {
+                            right: 10px;
+                        }
+                    }
+                }
+                .contest-content {
+                    padding-top: 7px;
+                    margin-bottom: 33px;
+                    display: flex;
+                    @include mq("tablet-small") {
+                        margin-bottom: 13px;
+                    }
+                }
+                .contest {
+                    display: flex;
+                    align-items: flex-end;
+                    margin: 0;
+                    @include mq("tablet-small") {
+                        margin-bottom: 20px;
+                        display: block;
+                    }
+                    .box {
+                        background-color: #3C2437;
+                        padding: 26px 25px 10px; 
+                        color: #fff;
+                        margin-bottom: 0;
+                        height: auto;
+                        
+                        @include mq("phone") {
+                            padding: 16px 15px 10px;  
+                        }
+                        .title {
+                            display: block;
+                            font-size: 24px;
+                            line-height: 32px;
+                            font-family: $CloserText-Medium;
+                            height: 68px;
+                            @include mq("tablet-small") {
+                                font-size: 26px;
+                                line-height: 32px;
+                            }
+                            @include mq("phone") {
+                                margin: 0 0 19px;
+                            }
+                        }
+                        .text {
+                            border-top: 2px solid rgba(152, 74, 138, 0.5);
+                            padding: 7px 0 0;
+                            @include mq("tablet-small") {
+                                height: auto !important;
+                            }
+                            p {
+                                margin: 0;
+                            }
+                        }
+                        
+                    }
+                    &:nth-child(1) {
+                        .title {
+                           margin: 0 0 55px;
+                           @include mq("tablet-small") {
+                               margin: 0;
+                           }
+                        }
+                    }
+                    &:nth-child(2) {
+                        .title {
+                            margin: 0 0 23px;
+                            @include mq("tablet-small") {
+                                margin: 0;
+                            }
+                        }
+                    }
+                    &:nth-child(3) {
+                        .title {
+                            margin: 0;
+                        }
+                    }
+                }
+            }
+            /* record-holder */
+            .record-holder {
+                margin-bottom: 65px;
+                position: relative;
+                @include mq("tablet") {
+                    margin-top: 50px !important;
+                    margin-bottom: 50px;
+                }
+                @include mq("tablet-small") {
+                    margin-bottom: 35px;
+                }
+                .bg {
+                    position: relative;
+                    &:after {
+                        position: absolute;
+                        top: 0;
+                        left: 0;
+                        right: 0;
+                        bottom: 0;
+                        content: ' ';
+                        display: block;
+                        background: #1C1818;
+                        opacity: 0.65;
+                    }
+                    img {
+                        display: block;
+                        width: auto;
+                        max-width: 100%;
+                        height: 100%;
+                        object-fit: cover;
+                        @include mq("tablet-small") {
+                            width: auto;
+                        }
+                    }
+                }
+                .record-content {
+                    position: absolute;
+                    top: 0;
+                    left: 0;
+                    color: #fff;
+                    padding:0 70px 0 72px;
+                    @include flexbox();
+                    @include justify-content(center);
+                    @include flex-direction(column);
+                    height: 100%;
+                    @include mq("tablet-small") {
+                        padding:0 20px;
+                    }
+                    .title {
+                        font-size: 30px;
+                        line-height: 40px;
+                        font-family: $CloserText-Medium;
+                        display: block;
+                        margin: 0 0 23px;
+                        padding-top: 20px;
+                        @include mq("tablet-small") {
+                            line-height: 36px;
+                            font-size: 24px;
+                        }
+                        @include mq("phone") {
+                            font-size: 22px;
+                            line-height: 26px;
+                        }
+                    }
+                    p {
+                        margin: 0 0 20px;
+                        @include mq("tablet-small") {
+                            margin: 0;
+                        }
+                        @include mq("phone") {
+                            line-height: 22px;
+                        }
+                    }
+                }
+            }
+            /* items-holder */
+            .items-holder {
+                margin-bottom: 20px;
+                .picture {
+                    @include flexbox();
+                    @include align-items(center);
+                    min-height: 100px;
+                    margin: 0 0 10px;
+                    img {
+                        display: block;
+                        object-fit: cover;
+                        height: auto;
+                    }
+                }
+                .col-3 {
+                    flex: 0 0 33.333%;
+                }
+                .col-2 {
+                    @include mq("tablet-small") {
+                        flex: 0 0 50%;
+                    }
+                }
+                p {
+                    @include mq("tablet-small") {
+                        line-height: 22px;
+                    } 
+                }
+            }
+        }
+    }
+}

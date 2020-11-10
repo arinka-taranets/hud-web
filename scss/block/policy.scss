@@ -1,0 +1,100 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    h1 {
+        span {
+            @include mq("phone") { 
+                font-size: 28px;
+                display: block;
+            }
+        }
+    }
+    .content {
+        ol {
+            list-style: none;
+            counter-reset: li;
+            padding-top: 50px;
+            @include mq("tablet") { 
+                padding-top: 30px;
+            }
+            li {
+                font: 24px/32px $CloserText-Medium;
+                color: #000;
+                margin-bottom: 50px;
+                @include mq("tablet-small") { 
+                    margin-bottom: 30px;
+                    font: 18px/28px $CloserText-Medium;
+                }
+                &:before {
+                    counter-increment: li;
+                    content: counters(li,".") ". "; 
+                }
+                span {
+                    display: block;
+                    font: 16px/26px $SFProDisplay-Regular;
+                    color: #323130;
+                    padding-top: 25px;
+                    @include mq("tablet") { 
+                        padding-top: 21px;
+                    }
+                }
+                dl {
+                    font: 16px/26px $SFProDisplay-Regular;
+                    color: #323031;
+                    dt {
+                        display: inline-block;
+                        vertical-align: middle;
+                    }
+                    dd {
+                        display: inline-block;
+                        vertical-align: middle;
+                        strong {
+                            font-family: $SFProDisplay-Medium;
+                        }
+                    }
+                }
+                ol {
+                    padding-top: 21px;
+                    li {
+                        font: 16px/26px $SFProDisplay-Regular;
+                        color: #323031;
+                        margin-bottom: 0;
+                        ol {
+                            padding-top: 0;
+                        }
+                    }
+                }
+                ul {
+                    margin: 0;
+                    li {
+                        padding: 0 0 0 10px;
+                        margin: 0;
+                        &:after {
+                            background: #000;
+                            width: 4px;
+                            height: 4px;
+                            display: block;
+                            border-radius: 50%;
+                            content: ' ';
+                            transform: translateY(12px);
+                        }
+                        &:before {
+                            counter-increment: none;
+                            content: ' ';
+                        }
+                    }
+                }
+            }
+        }
+        & > ol:first-child {
+            margin-bottom: 100px;
+            @include mq("tablet-wide") { 
+                margin-bottom: 80px;
+            }
+            @include mq("tablet") { 
+                margin-bottom: 50px;
+            }
+        }
+    }
+}

@@ -1,0 +1,26 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    .content > .large {
+        & + p {
+             & + .catalog {
+                 padding-top: 33px;
+                 @include mq("tablet") {
+                    padding-top: 23px;
+                 }
+             }
+        }
+    }
+    .rec {
+        background-color: #EBEBEB !important;
+        color: #323031 !important;
+    }
+    &.contest-holder {
+        h2 {
+            @include mq("tablet") {
+                line-height: 55px;
+            }
+        }
+    }
+}

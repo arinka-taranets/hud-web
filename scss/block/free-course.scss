@@ -1,0 +1,48 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section-promo + .section-wrapper {
+    .content {
+        & > .bg-grey {
+            margin-top: -22px;
+            @include mq("tablet") {
+                margin-top: 20px;
+            }
+        }
+        .video-catalog {
+            &.catalog {
+                padding-top: 10px;
+                justify-content: space-between;
+                .h3 {
+                    padding-bottom: 8px !important;
+                }
+                .speaker {
+                    font-size: 14px;
+                    color: #989697;
+                    line-height: 17px;
+                    display: block;
+                    margin-bottom: 22px;
+                }
+                p {
+                    margin: 0 0 16px;
+                    & + .btn {
+                        margin-top: 10px;
+                        margin-bottom: 16px;
+                    }
+                }
+                
+                .video {
+                    margin-top: 7px;
+                }
+            }
+        }
+    }
+}
+.section {
+    .col-30 {
+        width: 42.2%;
+    }
+    .col-70 {
+        width: 55.3%;
+    }
+}

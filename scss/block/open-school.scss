@@ -1,0 +1,151 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section {
+    &-offer {
+        margin-bottom: 37px;
+        @include mq("tablet-small") {
+            margin-bottom: 27px;
+        }
+        .color {
+            display: block;
+            font-size: 36px;
+            line-height: 43px;
+            color: #984A8A;
+            font-family: $SFProDisplay-Medium;
+            font-weight: normal;
+            margin-bottom: 26px;
+            @include mq("tablet-wide") {
+                font-size: 30px;
+                line-height: 40px;
+                margin-bottom: 20px;
+            }
+            @include mq("tablet") {
+                font-size: 22px;
+                line-height: 30px;
+            }
+            @media only screen and (max-width: 767px) {
+                font-size: 19px;
+                line-height: 26px;
+            }
+        }
+        span {
+            display: block;
+            line-height: 26px;
+            padding-right: 30px;
+            margin-bottom: 20px;
+            @include mq("phone-landscape") { 
+                padding-right: 0;
+                line-height: 24px;
+            }
+        }
+    }
+    &-about-school {
+        padding-top: 62px;
+        padding-bottom: 90px;
+        margin-bottom: 62px !important;
+        @include mq("tablet-wide") {
+            padding-top: 50px;
+            padding-bottom: 50px;
+            margin-bottom: 50px !important;
+        }
+        @include mq("tablet") {
+            padding-top: 40px;
+            padding-bottom: 40px;
+            margin-bottom: 40px !important;
+        }
+        @include mq("tablet-small") {
+            padding-top: 30px;
+            padding-bottom: 30px;
+            margin-bottom: 30px !important;
+        }
+        h2 {
+            margin-bottom: 28px;
+        }
+        .box {
+            @include mq("tablet") {
+                display: block;
+            }
+        }
+        .text {
+            width: 41%;
+            margin-right: 31px;
+            @include mq("tablet") {
+                width: 100%;
+            }
+            p {
+                font-size: 22px;
+                line-height: 38px;
+                @include mq("tablet") {
+                    font-size: 18px;
+                    line-height: 32px;
+                }
+            }
+        }
+        .large {
+            width: 59%;
+            padding-top: 17px !important;
+            margin-top: 12px !important;
+            @include mq("tablet") {
+                width: 100%;
+            }
+            p {
+                font-size: 16px;
+                line-height: 26px;
+                margin-bottom: 25px;
+            }
+        }
+        .video-box {
+            text-align: center;
+            margin-bottom: 30px;
+            margin-bottom: 30px;
+            @include mq("tablet-small") {
+                height: 300px;
+                
+            }
+            iframe {
+                @include mq("tablet-small") {
+                    height: 100%;
+                }
+            }
+        }
+        + .section-content {
+            margin-bottom: 0;
+        }
+    }
+    &-promo-info {
+        + .section-teachers {
+            margin-top: -56px;
+            @include mq("tablet") {
+                padding-bottom: 50px;
+                padding-top: 20px;
+            }
+
+            @include mq("tablet-small") {
+                padding-bottom: 15px;
+             }
+            .teachers-photo {
+                @include mq("tablet") {
+                    padding-top: 30px;
+                }
+            }
+        }
+    }
+    &-content + .section-promo-info {
+        .plus-content {
+            padding-bottom: 70px !important;
+            @include mq("tablet") {
+                padding-bottom: 30px !important;
+            }
+            @include mq("tablet-small") {
+                padding-bottom: 20px !important;
+            }
+        }
+    }
+    &-content + .section-promo-info {
+        .content-school {
+            margin-bottom: 0;
+            
+        }
+    }
+}

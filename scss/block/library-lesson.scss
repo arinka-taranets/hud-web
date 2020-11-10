@@ -1,0 +1,153 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.section-title + .section-content {
+    margin-top: -16px;
+    margin-bottom: 80px;
+    @include mq("tablet") {
+        margin-bottom: 60px;
+    }
+    @include mq("tablet-small") {
+        margin-bottom: 40px;
+    }
+    .content p:first-child {
+        margin-bottom: 76px;
+        
+    }
+} 
+.section-content {
+    iframe {
+        @include mq("tablet-small") {
+            height: 300px;
+        }
+    }
+    .content {
+        width: 100% !important;
+        padding-top: 0 !important;
+        .inform-holder {
+            border-top: none;
+            margin-bottom: 0;
+            @include mq("tablet") {
+                margin-top: 0;
+            }
+            @include mq("tablet-small") {
+                padding-top: 10px;
+            }
+            .box-twoColumn {
+                grid-template-columns: 80px auto;
+                .block {
+                    border-top:2px solid rgba($color: #c6c6cc, $alpha: 0.5);
+                    margin-top: -5px;
+                    padding-top: 12px;
+                    padding-right: 120px;
+                    @include mq("tablet") {
+                        padding-right: 50px;
+                        margin-bottom: 0;
+                    }
+                    @include mq("tablet-small") {
+                        padding-right: 0;
+                    }
+                    .row {
+                        @include mq("tablet-small") {
+                            margin-bottom: 10px !important;
+                        }
+                    }
+                    p {
+                        width: auto;
+                        margin-bottom: 43px;
+                        @include mq("tablet-small") {
+                            margin-bottom: 23px;
+                        }
+                    }
+                    .row {
+                        margin-bottom: 54px;
+                    }
+                    img {
+                        display: block;
+                        object-fit: cover;
+                        height: auto;
+                        width: 100%;
+                        @include mq("tablet-small") {
+                            margin-bottom: 15px;
+                        }
+                        @include mq("phone") {
+                            margin-bottom: 0;
+                        }
+                    }
+                }
+                .number {
+                    font-size: 96px;
+                    text-align: left;
+                    @include mq("tablet") {
+                        margin-left: 0;
+                    }
+                    @include mq("tablet-small") {
+                        font-size: 70px;
+                        line-height: 96px;
+                    }
+                }
+            }
+        }
+        .picture-result {
+            position: relative;
+            margin-bottom: 70px;
+            @include mq("tablet") {
+                margin-bottom: 50px;
+            }
+            @include mq("tablet-small") {
+                margin-bottom: 30px;
+            }
+            img {
+                display: block;
+                object-fit: cover;
+                height: auto;
+                width: 100%;
+            }
+            .post {
+                position: absolute;
+                top: -28px;
+                left: 36px;
+                background: #3C2437;
+                padding: 17px 33px;
+                font-size: 18px;
+                line-height: 26px;
+                color: #fff;
+                font-family: $SFProDisplay-Semibold;
+                @include mq("tablet") {
+                    padding: 10px 23px;
+                    font-size: 16px;
+                    line-height: 22px;
+                }
+                @include mq("tablet-small") {
+                    padding: 5px 13px;
+                    font-size: 14px;
+                    line-height: 18px;
+                    left: 10px;
+                    top: -13px;
+                }
+            }
+        }
+        h2 {
+            font-size: 48px;
+            @include mq("tablet-wide") {
+                font-size: 42px;
+                line-height: 53px;
+            }
+            @include mq("tablet-small") {
+                font-size: 32px;
+                line-height: 43px;
+            }
+            @include mq("phone") {
+                font-size: 30px;
+                line-height: 40px;
+            }
+        }
+        h3 {
+            font-size: 30px;
+        }
+    }
+    .video-box {
+        text-align: center;
+    }
+}
+    

@@ -1,0 +1,180 @@
+@import "../_media";
+@import "../_mixins";
+@import "../_variables";
+.footer {
+    background: #211B1E;
+    flex-shrink: 0;
+    padding: 69px 0 0;
+    overflow: hidden;   
+    @include mq('phone-landscape') {
+        padding: 59px 0 0;
+    }
+    &-top {
+        margin: 0 0 72px;
+        @include mq('phone-landscape') {
+            margin: 0 0 20px;
+        }
+    }
+    &-bottom {
+        margin: 0 0 75px;
+        @include mq('phone-landscape') {
+            margin: 0 0 35px;
+        }
+    }
+    &-left {
+        float: left;
+        width: 57%;
+        margin: 0 30px 0 0;
+        @include mq('tablet-wide') {
+            width: 50%;
+        }
+        @include mq('phone-landscape') {
+            float: none;
+            width: 100%;
+            margin: 0 0 30px;
+        }
+    }
+    &-right {
+        overflow: hidden;
+    }
+    .logo {
+        float: left;
+        background: url(../image/svg/logo_footer.svg) no-repeat;
+        width: 169px;
+        height: 48px;
+        margin: -15px 130px 0 0;
+        @include mq('tablet-wide') {
+            margin: -15px 60px 0 0;
+        }
+        @include mq('phone-landscape') {
+            margin: -10px 30px 0 0;
+        }
+        @include mq('tablet-small') {
+            display: block;
+            float: none;
+            margin: 0 0 30px;
+        }
+    }
+    .footer-menu {
+        margin: 0 85px 0 0;
+        flex-wrap: nowrap;
+        @include mq('phone-landscape') {
+            margin: 0;
+        }
+        @include mq('tablet-small') {
+            display: block;
+        }
+        ul {
+            li {
+                display: block;
+            }
+            a {
+                white-space: nowrap;
+                color: #C6C6C6;
+                font-size: 16px;
+                line-height: 30px;
+                font-family: $SFProDisplay-Medium;
+                transition: color ease-in-out 0.3s;
+                @include mq('tablet-wide') {
+                    font-size: 14px;
+                    white-space: wrap;
+                }
+                &:hover {
+                    color: #fff;
+                }
+            }
+        }
+    }
+    .form-search {
+        line-height: 19px;
+        margin: -7px 0 0;
+        label {
+            padding: 8px 0 0;
+            color: #fff;
+            font-family: $SFProDisplay-Semibold;
+            font-size: 16px;
+            margin: 0 0 15px 0;
+            display: block;
+        }
+        .input-box {
+            @include flexbox();
+            border-bottom: 1px solid #989697;
+            input {
+                background: none;
+                border: none;
+                width: calc(100% - 30px);
+                font-size: 16px;
+                line-height: 28px;
+                color: #989697;
+                height: 35px;
+            }
+            .submit {
+                background: url(../image/svg/seeAll.svg) no-repeat;
+                width: 32px;
+                height: 8px;
+                float: right;
+                margin: 13px 0 0;
+                &:hover {
+                    background: url(../image/svg/seeAll_hover.svg) no-repeat;
+                }
+            }
+        }
+    }
+    .info {
+        margin: 0 0 30px;
+        @include mq('tablet-small') {
+            display: block;
+        }
+    }
+    .soc-icon {
+        margin: 0 -10px 0 0;
+        @include mq('tablet-small') {
+            margin: 0 0 15px;
+        }
+        li {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0 10px 0 0;
+        }
+        a {
+            color: #c6c6c6;
+            font-size: 22px;
+            &:before {
+                margin: 0;
+                width: auto;
+            }
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .phone {
+        color: #fff;
+        font-family: $SFProDisplay-Semibold;
+        font-size: 16px;
+        line-height: 19px;
+        display: block;
+        padding: 3px 0 0;
+        margin: 0 20px 0 0;
+        @include mq('tablet-small') {
+            margin: 0 0 15px;
+        }
+    }
+    .link {
+        border-bottom: 2px solid #984a8a;
+        color: #fff;
+        padding: 0 0 6px;
+        &:hover {
+            border-bottom: 2px solid #C363B2;
+        }
+    }
+    .text-right {
+        span {
+            margin: 0 0 22px;
+            display: block;
+            font-size: 14px;
+            line-height: 22px;
+            color: #413F40;
+        }
+    }
+}
