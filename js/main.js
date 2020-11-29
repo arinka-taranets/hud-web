@@ -1,4 +1,3 @@
-
 $(function () {
     const $win = $(window);
     const $body = $("html, body");
@@ -159,6 +158,10 @@ $(function () {
         });
     }
 
+    if (window.jcf) {
+        jcf.replaceAll();
+    }
+
     // lightbox (image popup)
     if ($.magnificPopup) {
         $("a.zoom").magnificPopup({
@@ -169,6 +172,28 @@ $(function () {
                 opener: function (openerElement) {
                     return openerElement;
                 },
+            },
+        });
+        $(".gallery-popup-item").magnificPopup({
+            type: "image",
+            mainClass: "mfp-with-zoom",
+            // zoom: {
+            //     enabled: true,
+            //     opener: function (openerElement) {
+            //         return openerElement;
+            //     },
+            // },
+            image: {
+                markup: '<div class="mfp-figure"><div class="mfp-close"></div><figure class="desc-img"><div class="mfp-img"></div><figcaption><div class="mfp-title"></div></figcaption></figure></div>',
+                titleSrc: function (item) {
+                    const data = $(this.currItem.el[0]).data();
+                    const title = data.title ? `<h3>${data.title}</h3>` : "";
+                    const desc = data.desc ? `<p>${data.desc}</p>` : "";
+                    const link = data.link && data.linktext ? `<a class="btn" href="${data.link}">${data.linktext}</a>` : "";
+
+                    return `<div class="popup-desc">${title}${desc}${link}</div>`;
+                },
+                verticalFit: true,
             },
         });
 
@@ -184,6 +209,22 @@ $(function () {
         });
     }
 
+    $(".side-popup-btn").click(function (e) {
+        e.preventDefault();
+        const id = $(this).attr("href");
+        if (id.indexOf("#") !== -1) {
+            $(id).toggleClass("side-popup-open");
+        }
+    });
+    $(".popup-holder a.close").click(function (e) {
+        e.preventDefault();
+        $el = $(this);
+        $el.parent().addClass("side-popup-close");
+        setTimeout(function () {
+            $el.parent().removeClass("side-popup-open").removeClass("side-popup-close");
+        }, 300);
+    });
+
     if ($().stickyScrollBlock) {
         let $navSide = $("#side-nav").stickyScrollBlock({
             container: "#aside",
@@ -194,7 +235,7 @@ $(function () {
             extraTop: 100,
             setBoxHeight: false,
         });
-        
+
         $win.on("size:d", function (e) {
             $navSide = $("#side-nav").stickyScrollBlock({
                 container: "#aside",
@@ -208,23 +249,23 @@ $(function () {
         });
     }
 
-    var $stickWrapper = $('#stick-wrapper');
-    var $aOpener = $('div.aside-menu-opener');
-    $aOpener.click(function(){
-        if (!$(this).hasClass('menu-open')) {
+    var $stickWrapper = $("#stick-wrapper");
+    var $aOpener = $("div.aside-menu-opener");
+    $aOpener.click(function () {
+        if (!$(this).hasClass("menu-open")) {
             $win.scrollTop($stickWrapper.offset().top - 100);
         }
-        $(this).toggleClass('menu-open');
+        $(this).toggleClass("menu-open");
     });
 
     var scrollVal = 0;
     var initialMenuPos;
-    var $headerBt = $('header .header-bottom');
+    var $headerBt = $("header .header-bottom");
     var hh = $headerBt.outerHeight();
     var abs = false;
-    var getMenu = function(){
+    var getMenu = function () {
         if (!initialMenuPos) {
-         initialMenuPos = $aOpener.offset().top;
+            initialMenuPos = $aOpener.offset().top;
         }
         var cur = $win.scrollTop();
         var dif = scrollVal - cur;
@@ -235,36 +276,36 @@ $(function () {
             $aOpener.css({
                 // transition: "transform 0.3s ease",
                 // "-webkit-transition": "transform 0.3s ease",
-                position: 'fixed',
+                position: "fixed",
                 top: hh - 34,
-                left: 15
+                left: 15,
                 // transform: "translateY(" + posDiff + "px)",
                 // "-webkit-transform": "translateY(" + posDiff + "px)",
             });
             abs = false;
         } else if (dif < 0 && !abs) {
             $aOpener.css({
-                position: 'absolute',
+                position: "absolute",
                 top: posDiff,
-                left: 0
+                left: 0,
             });
             abs = true;
         } else if (cur + hh - 34 <= initialMenuPos) {
             $aOpener.css({
                 // transition: "none",
                 // "-webkit-transition": "none",
-                position: 'absolute',
+                position: "absolute",
                 top: 0,
                 left: 0,
                 transform: "none",
                 "-webkit-transform": "none",
             });
-            abs = true
+            abs = true;
         }
-    }
-    $win.on('scroll', function() {
-        getMenu()
-    }).on("resize", function(){
+    };
+    $win.on("scroll", function () {
+        getMenu();
+    }).on("resize", function () {
         $aOpener.css({
             transition: "none",
             "-webkit-transition": "none",
@@ -273,7 +314,6 @@ $(function () {
         });
         initialMenuPos = 0;
     });
-
 
     if (typeof SmoothScroll !== "undefined" && $("#side-nav").length) {
         new SmoothScroll({
@@ -372,28 +412,28 @@ $(function () {
         });
     });
 
-    $('.eq-holder').each(function(){
-        var $boxes = $('.eq-box', this);
-        var checkHeight = function() {
+    $(".eq-holder").each(function () {
+        var $boxes = $(".eq-box", this);
+        var checkHeight = function () {
             var maxHeight = 0;
-            $boxes.css('min-height', 0);
-            $boxes.each(function(){
+            $boxes.css("min-height", 0);
+            $boxes.each(function () {
                 if ($(this).innerHeight() > maxHeight) {
                     maxHeight = $(this).innerHeight();
                 }
             });
-            $boxes.css('min-height', maxHeight);
-        }
+            $boxes.css("min-height", maxHeight);
+        };
         if (window.innerWidth > mobSizeContent) {
             checkHeight();
         }
-        $win.on('resize', function(){
+        $win.on("resize", function () {
             if (window.innerWidth > mobSizeContent) {
                 checkHeight();
             }
-        }).on('size:mc', function(){
-            $boxes.css('min-height', 0);
-        })
+        }).on("size:mc", function () {
+            $boxes.css("min-height", 0);
+        });
     });
 
     $win.on("resize", function () {

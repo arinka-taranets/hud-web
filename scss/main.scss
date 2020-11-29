@@ -28,6 +28,13 @@
 @import "./block/contacts.scss";
 @import "./block/katalog-marafon.scss";
 @import "./block/katalog-marafon2.scss";
+@import "./block/teachers.scss";
+@import "./block/article.scss";
+@import "./block/events.scss";
+@import "./block/gallery.scss";
+@import "./block/events.scss";
+@import "./block/event.scss";
+@import "./block/faq.scss";
 @include font-face(SFProDisplay-Regular, "../fonts/SFProDisplay-Regular");
 @include font-face(SFProDisplay-Medium, "../fonts/SFProDisplay-Medium");
 @include font-face(SFProDisplay-Semibold, "../fonts/SFProDisplay-Semibold");
@@ -324,7 +331,7 @@ hr {
         span {
             @include mq("phone") {
                 display: block;
-            } 
+            }
         }
     }
     &-prev {
@@ -341,14 +348,14 @@ hr {
         &:after {
             left: 10px;
             right: auto;
-            background:url(../image/svg/seeAll-grey.svg) no-repeat;
+            background: url(../image/svg/seeAll-grey.svg) no-repeat;
         }
         &:hover {
             border: 1px solid #323031;
             background: none;
             color: #323031;
             &:after {
-                background:url(../image/svg/seeAll-grey-hover.svg) no-repeat;
+                background: url(../image/svg/seeAll-grey-hover.svg) no-repeat;
             }
         }
     }
@@ -452,7 +459,6 @@ hr {
 }
 /* section */
 .section {
-    
     /* promo */
     &-promo {
         height: auto;
@@ -481,7 +487,7 @@ hr {
         }
         .post {
             display: block;
-            background: #D885C9;
+            background: #d885c9;
             padding: 5px 10px 5px 20px;
             font-size: 18px;
             line-height: 38px;
@@ -614,16 +620,16 @@ hr {
         background-position: center;
         @include mq("tablet-wide") {
             width: 100%;
-            height:100%;
+            height: 100%;
             overflow: hidden;
         }
         &:before {
             @include mq("tablet-wide") {
-                content: '';
+                content: "";
                 display: block;
                 width: 100%;
                 height: 100%;
-                background-color:rgba($color: #1c1818, $alpha: 0.5);
+                background-color: rgba($color: #1c1818, $alpha: 0.5);
                 position: absolute;
                 top: 0;
                 left: 0;
@@ -632,7 +638,7 @@ hr {
     }
     .search-form {
         position: relative;
-        background-color: #3C2437;
+        background-color: #3c2437;
         max-width: 1170px;
         width: 100%;
         margin: 80px auto -35px;
@@ -656,7 +662,7 @@ hr {
             background-size: cover;
             min-width: auto;
             padding: 0;
-            
+
             &:hover {
                 background: url(../image/svg/seeAll_hover.svg) no-repeat;
                 background-size: cover;
@@ -736,7 +742,7 @@ hr {
         }
         p {
             width: 665px;
-            border-top: 2px solid #D885C9;
+            border-top: 2px solid #d885c9;
             padding: 12px 300px 0 0;
             color: #fff;
             font-size: 22px;
@@ -911,7 +917,7 @@ hr {
             display: block;
             font-size: 24px;
             line-height: 32px;
-            margin-bottom: 22px; 
+            margin-bottom: 22px;
             font-family: $CloserText-Medium;
             @include mq("tablet") {
                 font-size: 22px;
@@ -920,7 +926,7 @@ hr {
             a {
                 color: #000;
                 &:hover {
-                    color: #C463B2;
+                    color: #c463b2;
                 }
             }
         }
@@ -942,7 +948,6 @@ hr {
         .btn {
             margin: 0 0 40px;
         }
-       
     }
     /* education */
     &-education {
@@ -1526,7 +1531,8 @@ hr {
                         font-size: 22px;
                         color: #fff;
                         line-height: 26px;
-                        font-family: $SFProDisplay-Semibold;                    }
+                        font-family: $SFProDisplay-Semibold;
+                    }
                 }
             }
         }
@@ -1537,6 +1543,9 @@ hr {
             line-height: 92px;
             color: #000;
             margin: 0 0 31px -4px;
+            @include mq("tablet-wide") {
+                width: 100%;
+            }
             @include mq("tablet") {
                 font-size: 69px;
             }
@@ -1545,12 +1554,13 @@ hr {
                 line-height: 60px;
             }
             @include mq("phone-wide") {
-                font-size: 32px;
-                line-height: 45px;
+                font-size: 31px;
+                line-height: 35px;
             }
         }
         .text-long {
             width: 980px !important;
+            padding: 12px 22px 0 0 !important;
             @include mq("tablet-wide") {
                 width: 100% !important;
                 padding: 12px 0 0 !important;
@@ -1566,13 +1576,16 @@ hr {
         }
         & + .section-title {
             margin-top: -12px;
+            @include mq("tablet-small") {
+                margin-top: 0;
+            }
         }
     }
     /* breadcrumb */
     .breadcrumb {
         width: 100%;
         margin: 0;
-       
+
         li {
             display: inline-block;
             color: #211b1e;
@@ -1679,13 +1692,93 @@ hr {
     }
 }
 /* popup-holder */
+.mfp-wrap {
+    .popup-desc {
+        background: #fff;
+        margin-top: -40px;
+        width: calc(100% + 36px);
+        padding: 46px 70px 62px;
+        @include mq("tablet") {
+            padding: 26px 40px 32px;
+        }
+        @include mq("tablet-small") {
+            padding: 16px 15px 22px;
+        }
+        h3 {
+            font-size: 24px;
+            margin: 0 0 10px;
+            line-height: 32px;
+            color: #000;
+            font-family: 'SFProDisplay-Semibold', sans-serif;
+            font-weight: normal;
+            @include mq("tablet-small") {
+                font-size: 22px;
+                line-height: 28px;
+            }
+        }
+        p {
+            font-size: 16px;
+            line-height: 28px;
+            color: #989697;
+            margin-bottom: 35px;
+            @include mq("tablet-small") {
+                font-size: 15px;
+                line-height: 22px;
+            }
+            a {
+                margin-left: 5px;
+                font-family: 'SFProDisplay-Semibold', sans-serif; 
+            }
+        }
+        .btn {
+            display: inline-block;
+            vertical-align: middle;
+            margin: 0;
+            height: 42px;
+            padding: 7px 86px 0 16px;
+            line-height: 28px;
+            &:hover {
+                color: #fff;
+            }
+        }
+    }
+    .desc-img {
+        img {
+            max-height: calc(100vh - 250px) !important;
+            @include mq("tablet") {
+                max-height: calc(100vh - 215px) !important;
+            }
+
+        }
+    }
+}
 .popup-holder {
-    position: relative;
-    width: 705px;
-    margin: 0 auto;
+    position: fixed;
+    top: 0;
+    right: -100vw;
+    bottom: 0;
+    left: 100vw;
+    z-index: 20;
+    width: 100%;
+    height: 100%;
+    opacity: 0;
+    transition: opacity 0.3s ease-in-out;
+    &:after {
+        content: ' ';
+        display: block;
+        background: #000;
+        opacity: 0.7;
+        width: 100%;
+        height: 100%;
+        position: absolute;
+        top: 0;
+        left: 0;
+        bottom: 0;
+        right: 0;
+        z-index: -1;
+    }
     @include mq("tablet") {
         width: 100%;
-        overflow-y: auto;
         height: 100vh;
     }
     .close {
@@ -1696,6 +1789,7 @@ hr {
         height: 22px;
         display: block;
         background: url(../image/svg/close.svg) no-repeat;
+        z-index: 21;
         &:hover {
             background: url(../image/svg/close-hover.svg) no-repeat;
         }
@@ -1705,10 +1799,23 @@ hr {
         }
     }
     .popup-content {
+        position: absolute;
+        right: -100%;
+        top: 0;
         background-color: #fff;
         padding: 65px 67px 66px 70px;
+        width: 705px;
+        height: 100%;
+        transition: right 0.3s ease-in-out;
+
         @include mq("tablet") {
-            padding: 30px 15px 0;
+            padding: 30px 15px;
+            width: 100%;
+            overflow-y: auto;
+            overflow-x: hidden;
+        }
+        @include mq("tablet-small") {
+            padding: 50px 15px 30px;
         }
     }
     h2 {
@@ -1716,10 +1823,73 @@ hr {
         line-height: 40px;
         color: #000;
         margin-bottom: 34px;
+        max-width: 513px;
         @include mq("tablet-small") {
             line-height: 32px;
             margin-bottom: 30px;
             font-size: 25px;
+            max-width: initial;
+            width: 100%;
+        }
+    }
+    .call {
+        display: block;
+        font: 16px 'SFProDisplay-Semibold', sans-serif;
+        color: #323031;
+        line-height: 20px;
+    }
+    h2 + .call {
+        margin-top: -18px;
+    }
+    .feedback {
+        display: block;
+        font-size: 18px;
+        line-height: 26px;
+        font-family: 'SFProDisplay-Semibold', sans-serif;
+        color: #984A8A;
+        margin-bottom: 28px;
+    }
+    h2 + .feedback {
+        margin-top: -23px;
+    }
+    .vidget {
+        background-color: #D885C9;
+        margin: 0 -9999px 16px 0;
+        padding: 3px 9999px 4px 7px;
+        display: flex;
+        align-items:center;
+        .txt {
+            font-size: 14px;
+            color: #fff;
+            line-height: 28px;
+            font-family: 'SFProDisplay-Semibold', sans-serif;
+            @include mq("tablet-small") {
+                line-height: 20px;
+            }
+        }
+        .icon-star-empty {
+            color: #fff;
+            margin-right: 3px;
+            &:before {
+                font-size: 20px;
+                line-height: 28px;
+            }
+        }
+    }
+    .price-holder {
+        margin-bottom: 37px;
+        display: flex;
+        align-items: flex-end;
+        font-family: 'SFProDisplay-Semibold', sans-serif;
+        line-height: 26px;
+        .price {
+            font-size: 24px;
+            color: #000;
+            margin-right: 12px;
+        }
+        del {
+            font-size: 18px;
+            color: #C6C6C6;
         }
     }
     dl {
@@ -1747,6 +1917,7 @@ hr {
             }
         }
     }
+    
     .input-box {
         border-bottom: 1px solid #989697;
         padding: 0 0 4px;
@@ -1755,6 +1926,7 @@ hr {
             margin-bottom: 20px;
         }
         input {
+            width: 100%;
             background: none;
             border: none;
             font-size: 16px;
@@ -1766,10 +1938,126 @@ hr {
                 color: #323031;
             }
         }
+        &.error {
+            position: relative;
+            border-bottom: 1px solid #C363B2;
+            margin-bottom: 55px;
+            .error-note {
+                position: absolute;
+                bottom: -28px;
+                left: 0;
+                color: #C363B2;
+                font-size: 14px;
+                line-height: 26px;
+            }
+            input {
+                &::placeholder {
+                    color: #C363B2;
+                }
+            }
+        }
+    }
+    .select-box {
+        margin-bottom: 15px;
+        width: 100%;
+
+        select {
+            width: 100%;
+        }
+       .jcf-select {
+            outline: none;
+            border: none;
+            border-bottom: 1px solid #989697;
+            background: none;
+            height: 30px;
+            cursor: pointer;
+            margin: 0;
+            width: 100%;
+            min-width: auto;
+        }
+        .jcf-select-text {
+            font-size: 18px;
+            overflow: hidden;
+            color: #323031;
+            font-family: 'SFProDisplay-Semibold', sans-serif;
+            margin: 0;
+            display: block;
+            height: 30px;
+            width: calc(100% - 30px);
+
+            span {
+                text-overflow: ellipsis;
+                white-space: nowrap;
+            }
+            @include mq("tablet-small") {
+                font-size: 16px;
+            }
+        }
+        .jcf-select-opener {
+            background: url(../image/svg/dropDown.svg) no-repeat;
+            width: 24px;
+            height: 24px;
+        }
+        .jcf-select-drop .jcf-select-drop-content {
+            border: 1px solid #989697 !important;
+        }
+        .jcf-select .jcf-select-drop {
+            top: 100%;
+        }
+        .jcf-list-box {
+            position: absolute;
+            top:20px;
+            left: 0;
+            width: 100%;
+            background-color: red !important;
+        }
+    }
+    .text-border {
+        padding-bottom: 20px;
+        border-bottom: 2px solid rgba($color: #c6c6cc, $alpha: 0.5);
+        margin-bottom: 35px;
+        p {
+            font-size: 16px;
+            line-height: 26px;
+            color: #323031;
+            margin-bottom: 0;
+        }
+    }
+    h2 + .text-border {
+        margin-top: -8px;
+    }
+
+    .note {
+        display: block;
+        font-size: 14px;
+        line-height: 26px;
+        color: #989697;
+        font-family:'SFProDisplay-Semibold', sans-serif;
+        @include mq("tablet-small") {
+            line-height: 20px;
+        }
+        &-gift {
+            color: #C363B2;
+            font-size:16px;
+        }
+    }
+    .input-box + .note {
+        margin-top: -15px;
+    }
+    .note + .form-info {
+        margin-top: -12px;
+    }
+    .note + .btn {
+        margin-top: 40px;
     }
     .check-container {
         margin-top: 48px;
-        margin-bottom: 30px;
+        margin-bottom: 43px;
+        @include mq("tablet-small") {
+            margin-top: 30px;
+            margin-bottom: 30px;
+    
+        }
         .checkmark {
             border: 1px solid #984a8a;
         }
@@ -1782,18 +2070,98 @@ hr {
             line-height: 22px;
         }
     }
+    .btn + p {
+        margin-bottom: 0;
+    }
+    .container-radio {
+        display: block;
+        position: relative;
+        padding-left: 37px;
+        margin-bottom: 15px;
+        font-size: 16px;
+        color: #323031;
+        line-height: 20px;
+        cursor: pointer;
+        margin-top: 10px;
+        input {
+            position: absolute;
+            opacity: 0;
+            cursor: pointer;
+            height: 0;
+            width: 0;
+        }
+        .checkmark {
+            position: absolute;
+            top: -3px;
+            left: 0;
+            height: 24px;
+            width: 24px;
+            border-radius: 50%;
+            border: 1px solid #984A8A;
+        }
+        &:hover {
+            input ~ .checkmark {
+                background-color: #fff;
+            }
+        }
+        input:checked ~ .checkmark {
+            border: 7px solid #984A8A;
+        }
+        .checkmark:after {
+            content: "";
+            position: absolute;
+            display: none;
+        }
+        .container input:checked ~ .checkmark:after {
+            display: block;
+        }
+        .checkmark:after {
+            top: 9px;
+            left: 9px;
+            width: 8px;
+            height: 8px;
+            border-radius: 50%;
+            background: white;
+        }
+        .radio-text {
+            .price {
+                display: block;
+                font-size: 24px;
+                line-height: 26px;
+                color: #000;
+                padding-top: 10px;
+                margin-bottom: 15px;
+            }
+            ul {
+                margin: -3px 0 -38px;
+                li {
+                    line-height: 20px;
+                    font-size: 16px;
+                    margin-bottom: 5px;
+                    &:before {
+                        content: ' - ';
+                    }
+                }
+            }
+        }
+    }
+    .radio-box {
+        padding-left: 53px;
+        margin-bottom: 27px;
+    }
     .btn {
-        margin: 0 0 20px;
+        margin: 0 0 17px;
         &-submit {
             height: 52px;
             font-size: 18px;
             line-height: 26px;
             font-family: $SFProDisplay-Semibold;
-            font-family: $SFProDisplay-Semibold;
             padding: 0 46px 0 20px;
+            min-width: 370px;
             @include mq("tablet-small") {
                 width: 100%;
                 padding: 0 26px 0 20px;
+                min-width: initial;
             }
             @include mq("phone") {
                 font-size: 16px;
@@ -1812,6 +2180,138 @@ hr {
                 }
             }
         }
+        &-send {
+            width: 230px;
+            min-width: auto;
+            @include mq("tablet-small") {
+                width: 100%;
+                padding: 0 26px 0 20px;
+            }
+        }
+        &-prev {
+            display: inline-block;
+            vertical-align: middle;
+            text-align: right;
+            min-width: 168px;
+            padding: 0 21px 0 78px;
+            width: auto;
+            height: 52px;
+            font-size: 18px;
+            line-height: 26px;
+            font-family: 'SFProDisplay-Semibold', sans-serif;
+            line-height: 48px;
+            margin: 0;
+            margin-top: 0!important;
+            border: 2px solid #989697;
+            @include mq("tablet-small") {
+                width: 100%;
+                margin-bottom: 20px;
+                min-width: auto;
+                display: block;
+                font-size: 16px;
+            }
+            &:after {
+                width: 64px;
+                height: 16px;
+                background-size: cover;
+
+            }
+            &:hover {
+                border-color: #000;
+            }
+        }
+        &-next {
+            display: inline-block;
+            vertical-align: middle;
+            align-items: center;
+            height: 52px;
+            font-size: 18px;
+            line-height: 26px;
+            font-family: 'SFProDisplay-Semibold', sans-serif;
+            padding: 0 78px 0 21px;
+            line-height: 52px;
+            min-width: 198px;
+            margin: 0;
+            @include mq("tablet-small") {
+                width: 100%;
+                margin-bottom: 20px;
+                min-width:auto;
+                display: block;
+                font-size: 16px;
+            }
+            &:after {
+                width: 64px;
+                height: 16px;
+                background-size: cover;
+            }
+            &:hover {
+                color: #fff;
+            }
+        }
+        &-close {
+            text-align: left;
+            padding: 0 0 0 13px;
+            min-width: 188px;
+            font-size: 16px;
+            font-family: 'SFProDisplay-Regular', sans-serif;
+            border: 1px solid;
+            height: 42px;
+            line-height: 40px;
+            &:after {
+                left: auto;
+                right: 20px;
+                transform:rotate(180deg);
+                width: 32px;
+                height: 8px;
+                top: 17px;
+            }
+        }
+    }
+    .call + .btn-link {
+        padding-top: 35px;
+    }
+    .btn-right {
+        width: 338px;
+        @include mq("tablet-small") {
+            width: 100%;
+        }
+        .btn-submit {
+            width: 338px;
+            @include mq("tablet-small") {
+                width: 100%;
+            }
+        }
+        p {
+            line-height: 22px;
+            margin-bottom: 0;
+        }
+    }
+    .btn-link {
+        padding-top: 43px;
+        margin-bottom: 5px;
+        display: flex;
+        justify-content: space-between;
+        @include mq("tablet-small") {
+            display: block;
+        }
+    }
+    .form-info + .btn-link {
+        padding-top: 0;
+    }
+}
+
+.side-popup-open {
+    left: 0;
+    right: 0;
+    opacity: 1;
+    .popup-content {
+        right: 0;
+    }
+}
+.side-popup-close {
+    opacity: 0;
+    .popup-content {
+        right: -100%;
     }
 }
 button.mfp-close {
@@ -1826,14 +2326,12 @@ button.mfp-close {
 }
 .section .content > h2 + .large {
     margin-top: 0;
-
 }
 .section-promo + .section-about .h2 {
     margin-right: 159px;
     padding-top: 20px;
     @include mq("phone-landscape") {
         margin: 0 59px 10px 0;
-       
     }
     @include mq("tablet-small") {
         padding-top: 0;
@@ -1845,7 +2343,7 @@ button.mfp-close {
         margin: 0 9px 10px 0;
     }
 }
-.section-wrapper-narrow  {
+.section-wrapper-narrow {
     .content > h2 {
         padding-top: 0;
     }
@@ -1859,3 +2357,4 @@ button.mfp-close {
         padding-top: 40px;
     }
 }
+
